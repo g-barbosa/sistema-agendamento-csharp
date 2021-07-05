@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "GerenciamentoSalao.Infra": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "connectionString": "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=GerenciamentoSalao;Data Source=GIO"
+      }
+    }
+  }
+}
