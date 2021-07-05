@@ -9,7 +9,19 @@ namespace GerenciamentoSalao.Domain.Entities
         public string Login { get; private set; }
         public string Password { get; private set; }
         public DateTime Entrada { get; private set; }
-        public DateTime Saída { get; private set; }
+        public DateTime Saida { get; private set; }
+
+        protected Funcionario () { }
+
+        public Funcionario(string nome, string telefone, string login, string password, DateTime entrada, DateTime saida)
+        {
+            Nome = nome;
+            Telefone = telefone;
+            Login = login;
+            Password = password;
+            Entrada = entrada;
+            Saida = saida;
+        }
 
         public void AlterarFuncionario(Funcionario funcionario)
         {
@@ -18,7 +30,7 @@ namespace GerenciamentoSalao.Domain.Entities
             Login = funcionario.Login;
             Password = funcionario.Password;
             Entrada = funcionario.Entrada;
-            Saída = funcionario.Saída;
+            Saida = funcionario.Saida;
         }
     }
 }

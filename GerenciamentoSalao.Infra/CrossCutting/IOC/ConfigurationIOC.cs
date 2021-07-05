@@ -38,6 +38,10 @@ namespace GerenciamentoSalao.Infra.CrossCutting.IOC
 
             builder.RegisterType<MapperCliente>().As<IMapperCliente>();
             builder.RegisterType<MapperProduto>().As<IMapperProduto>();
+            builder.RegisterType<MapperServico>().As<IMapperServico>();
+            builder.RegisterType<MapperFuncionario>().As<IMapperFuncionario>();
+            builder.RegisterType<MapperAgenda>().As<IMapperAgenda>();
+            builder.RegisterType<MapperAgendamento>().As<IMapperAgendamento>();
             #endregion
         }
     }

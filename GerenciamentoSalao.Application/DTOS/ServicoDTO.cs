@@ -1,12 +1,14 @@
-﻿using System;
+﻿using GerenciamentoSalao.Application.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GerenciamentoSalao.Application.DTOS
 {
-    public class ServicoDTO
+    public class ServicoDTO : IDTORoot
     {
-        public string Descricao { get; private set; }
-        public decimal Preco { get; private set; }
+        public Guid Id { get; set; }
+        public string Descricao { get; set; }
+        public decimal Preco { get; set; }
     }
 }

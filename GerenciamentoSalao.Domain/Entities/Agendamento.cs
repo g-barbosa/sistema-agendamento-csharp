@@ -12,6 +12,15 @@ namespace GerenciamentoSalao.Domain.Entities
         public Servico Servico { get; private set; }
         public Agenda Agenda { get; private set; }
 
+        protected Agendamento() { }
+
+        public Agendamento(Guid produtoId, Guid servicoId, Guid agendaId)
+        {
+            ProdutoId = produtoId;
+            ServicoId = servicoId;
+            AgendaId = agendaId;
+        }
+
         public void AlterarProduto(Produto produto)
         {
             ProdutoId = produto.Id;

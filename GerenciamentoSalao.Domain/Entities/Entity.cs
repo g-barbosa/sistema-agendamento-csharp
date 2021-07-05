@@ -6,6 +6,6 @@ namespace GerenciamentoSalao.Domain.Entities
     {
         public Guid Id { get; set; }
         public bool Ativo { get; set; }
-        public DateTime DataCadastro { get; private set; }
+        public DateTime DataCadastro { get; set; }
     }
 }

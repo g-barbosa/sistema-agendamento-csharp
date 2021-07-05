@@ -1,17 +1,19 @@
-﻿using GerenciamentoSalao.Domain.Entities;
+﻿using GerenciamentoSalao.Application.Interfaces;
+using GerenciamentoSalao.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace GerenciamentoSalao.Application.DTOS
 {
-    public class AgendaDTO
+    public class AgendaDTO : IDTORoot
     {
-        public DateTime Data { get; private set; }
-        public Guid FuncionarioId { get; private set; }
-        public Guid ClienteId { get; private set; }
+        public Guid Id { get; set; }
+        public DateTime Data { get; set; }
+        public Guid FuncionarioId { get; set; }
+        public Guid ClienteId { get; set; }
 
-        public Funcionario Funcionario { get; private set; }
-        public Cliente Cliente { get; private set; }
+        public Funcionario Funcionario { get; set; }
+        public Cliente Cliente { get; set; }
     }
 }

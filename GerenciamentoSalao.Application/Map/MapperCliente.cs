@@ -8,15 +8,13 @@ namespace GerenciamentoSalao.Infra.CrossCutting.Map
 {
     public class MapperCliente : IMapperCliente
     {
-        public Cliente MapperDTOToEntity(ClienteDTO clienteDTO)
+        public Cliente MapperDTOToEntity(ClienteDTO DTO)
         {
-            var cliente = new Cliente()
-            {
-                Id = clienteDTO.Id,
-                Nome = clienteDTO.Nome,
-                Telefone = clienteDTO.Telefone,
-                Login = clienteDTO.Login
-            };
+            var cliente = new Cliente(
+                DTO.Nome,
+                DTO.Telefone,
+                DTO.Login,
+                DTO.Password);
 
             return cliente;
         }
@@ -34,7 +32,7 @@ namespace GerenciamentoSalao.Infra.CrossCutting.Map
             return clienteDTO;
         }
 
-        public IEnumerable<ClienteDTO> MapperListClientesDTO(IEnumerable<Cliente> clientes)
+        public IEnumerable<ClienteDTO> MapperListDTO(IEnumerable<Cliente> clientes)
         {
             var dto = clientes.Select(cliente => MapperEntityToDTO(cliente));
             return dto;

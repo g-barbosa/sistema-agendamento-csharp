@@ -28,10 +28,14 @@ namespace GerenciamentoSalao.Infra.Data
                 if (entry.State == EntityState.Added)
                 {
                     entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                    entry.Property("Ativo").CurrentValue = true;
+                    entry.Property("Id").CurrentValue = Guid.NewGuid();
                 }
                 if (entry.State == EntityState.Modified)
                 {
                     entry.Property("DataCadastro").IsModified = false;
+                    entry.Property("Ativo").IsModified = false;
+                    entry.Property("Id").IsModified = false;
                 }
             }
             return base.SaveChanges();

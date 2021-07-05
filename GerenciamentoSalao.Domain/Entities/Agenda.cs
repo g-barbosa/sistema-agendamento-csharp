@@ -11,6 +11,15 @@ namespace GerenciamentoSalao.Domain.Entities
         public Funcionario Funcionario { get; private set; }
         public Cliente Cliente { get; private set; }
 
+        protected Agenda() { }
+
+        public Agenda(DateTime data, Guid funcionarioId, Guid clienteId)
+        {
+            Data = data;
+            FuncionarioId = funcionarioId;
+            ClienteId = clienteId;
+        }
+
         public void AlterarData(DateTime data)
         {
             Data = data;

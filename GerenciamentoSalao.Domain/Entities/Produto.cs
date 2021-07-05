@@ -4,9 +4,18 @@ namespace GerenciamentoSalao.Domain.Entities
 {
     public class Produto : Entity
     {
-        public string Descricao { get; set; }
-        public int Quantidade { get; set; }
-        public decimal Preco { get; set; }
+        public string Descricao { get; private set; }
+        public int Quantidade { get; private set; }
+        public decimal Preco { get; private set; }
+
+        protected Produto() { }
+
+        public Produto(string descricao, int quantidade, decimal preco)
+        {
+            Descricao = descricao;
+            Quantidade = quantidade;
+            Preco = preco;
+        }
 
         public void Ativar() => Ativo = true;
         public void Desativar() => Ativo = false;

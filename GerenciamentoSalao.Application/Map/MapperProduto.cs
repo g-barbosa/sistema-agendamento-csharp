@@ -10,13 +10,7 @@ namespace GerenciamentoSalao.Infra.CrossCutting.Map
     {
         public Produto MapperDTOToEntity(ProdutoDTO DTO)
         {
-            var model = new Produto()
-            {
-                Id = DTO.Id,
-                Descricao = DTO.Descricao,
-                Preco = DTO.Preco,
-                Quantidade = DTO.Quantidade,
-            };
+            var model = new Produto(DTO.Descricao, DTO.Quantidade, DTO.Preco);
 
             return model;
         }
