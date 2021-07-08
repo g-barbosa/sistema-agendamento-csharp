@@ -20,8 +20,4 @@
     <ProjectReference Include="..\GerenciamentoSalao.Domain\GerenciamentoSalao.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CrossCutting\Interfaces\" />
-  </ItemGroup>
-
 </Project>

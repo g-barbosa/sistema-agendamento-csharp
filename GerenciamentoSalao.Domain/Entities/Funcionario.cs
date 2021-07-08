@@ -32,5 +32,10 @@ namespace GerenciamentoSalao.Domain.Entities
             Entrada = funcionario.Entrada;
             Saida = funcionario.Saida;
         }
+
+        public void AlterarPassword(string newPassword)
+        {
+            Password = newPassword;
+        }
     }
 }

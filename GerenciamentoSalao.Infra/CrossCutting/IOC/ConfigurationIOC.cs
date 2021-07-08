@@ -1,6 +1,8 @@
 ﻿using Autofac;
 using GerenciamentoSalao.Application;
 using GerenciamentoSalao.Application.Interfaces;
+using GerenciamentoSalao.Domain.Core.DomainObjects;
+using GerenciamentoSalao.Domain.Core.Interfaces;
 using GerenciamentoSalao.Domain.Core.Interfaces.Repositories;
 using GerenciamentoSalao.Domain.Core.Interfaces.Services;
 using GerenciamentoSalao.Domain.Services;
@@ -17,10 +19,10 @@ namespace GerenciamentoSalao.Infra.CrossCutting.IOC
             #region IOC
             builder.RegisterType<ClienteApplicationService>().As<IClienteApplicationService>();
             builder.RegisterType<ProdutoApplicationService>().As<IProdutoApplicationService>();
-            //builder.RegisterType<FuncionarioApplicationService>().As<IFuncionarioApplicationService>();
-            //builder.RegisterType<ServicoApplicationService>().As<IServicoApplicationService>();
-            //builder.RegisterType<AgendaApplicationService>().As<IAgendaApplicationService>();
-            //builder.RegisterType<AgendamentoApplicationService>().As<IAgendamentoApplicationService>();
+            builder.RegisterType<FuncionarioApplicationService>().As<IFuncionarioApplicationService>();
+            builder.RegisterType<ServicoApplicationService>().As<IServicoApplicationService>();
+            builder.RegisterType<AgendaApplicationService>().As<IAgendaApplicationService>();
+            builder.RegisterType<AgendamentoApplicationService>().As<IAgendamentoApplicationService>();
 
             builder.RegisterType<ClienteService>().As<IClienteService>();
             builder.RegisterType<FuncionarioService>().As<IFuncionarioService>();
@@ -42,6 +44,8 @@ namespace GerenciamentoSalao.Infra.CrossCutting.IOC
             builder.RegisterType<MapperFuncionario>().As<IMapperFuncionario>();
             builder.RegisterType<MapperAgenda>().As<IMapperAgenda>();
             builder.RegisterType<MapperAgendamento>().As<IMapperAgendamento>();
+
+            builder.RegisterType<Cryptography>().As<ICryptography>();
             #endregion
         }
     }

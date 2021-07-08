@@ -38,7 +38,7 @@ namespace GerenciamentoSalao.API.Controllers
                     return NotFound();
 
                 _service.Add(agendaDto);
-                return Ok("Funcionario Cadastrado com sucesso!");
+                return Ok("Agenda Cadastrado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -54,7 +54,7 @@ namespace GerenciamentoSalao.API.Controllers
                 if (agendaDto == null)
                     return NotFound();
                 _service.Update(agendaDto);
-                return Ok("Funcionário atualizado com sucesso!");
+                return Ok("Agenda atualizado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -70,7 +70,7 @@ namespace GerenciamentoSalao.API.Controllers
                 if (agendaDto == null)
                     return NotFound();
                 _service.Remove(agendaDto);
-                return Ok("Funcionário removido com sucesso!");
+                return Ok("Agenda removido com sucesso!");
             }
             catch (Exception ex)
             {

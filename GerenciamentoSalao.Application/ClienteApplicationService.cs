@@ -28,7 +28,7 @@ namespace GerenciamentoSalao.Application
         {
             var clientes = _clienteService.GetAll();
 
-            return _mapperCliente.MapperListClientesDTO(clientes);
+            return _mapperCliente.MapperListDTO(clientes);
         }
 
         public ClienteDTO GetById(Guid id)

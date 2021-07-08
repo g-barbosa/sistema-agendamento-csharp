@@ -38,7 +38,7 @@ namespace GerenciamentoSalao.API.Controllers
                     return NotFound();
 
                 _service.Add(clienteDTO);
-                return Ok("Funcionario Cadastrado com sucesso!");
+                return Ok("Cliente Cadastrado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -54,7 +54,7 @@ namespace GerenciamentoSalao.API.Controllers
                 if (clienteDTO == null)
                     return NotFound();
                 _service.Update(clienteDTO);
-                return Ok("Funcionário atualizado com sucesso!");
+                return Ok("Cliente atualizado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -70,7 +70,7 @@ namespace GerenciamentoSalao.API.Controllers
                 if (clienteDTO == null)
                     return NotFound();
                 _service.Remove(clienteDTO);
-                return Ok("Funcionário removido com sucesso!");
+                return Ok("Cliente removido com sucesso!");
             }
             catch (Exception ex)
             {

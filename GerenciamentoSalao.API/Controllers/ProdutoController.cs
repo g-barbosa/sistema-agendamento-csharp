@@ -38,7 +38,7 @@ namespace GerenciamentoSalao.API.Controllers
                     return NotFound();
 
                 _service.Add(ProdutoDTO);
-                return Ok("Funcionario Cadastrado com sucesso!");
+                return Ok("Produto Cadastrado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -54,7 +54,7 @@ namespace GerenciamentoSalao.API.Controllers
                 if (ProdutoDTO == null)
                     return NotFound();
                 _service.Update(ProdutoDTO);
-                return Ok("Funcionário atualizado com sucesso!");
+                return Ok("Produto atualizado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -70,7 +70,7 @@ namespace GerenciamentoSalao.API.Controllers
                 if (ProdutoDTO == null)
                     return NotFound();
                 _service.Remove(ProdutoDTO);
-                return Ok("Funcionário removido com sucesso!");
+                return Ok("Produto removido com sucesso!");
             }
             catch (Exception ex)
             {

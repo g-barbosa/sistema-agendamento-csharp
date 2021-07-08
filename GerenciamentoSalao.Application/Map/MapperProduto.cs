@@ -33,5 +33,11 @@ namespace GerenciamentoSalao.Infra.CrossCutting.Map
             var dto = produtos.Select(produto => MapperEntityToDTO(produto));
             return dto;
         }
+
+        public IEnumerable<ProdutoDTO> MapperListDTO(IEnumerable<Produto> produtos)
+        {
+            var dto = produtos.Select(produto => MapperEntityToDTO(produto));
+            return dto;
+        }
     }
 }

@@ -26,5 +26,10 @@ namespace GerenciamentoSalao.Domain.Entities
             Login = cliente.Login;
             Password = cliente.Password;
         }
+
+        public void AlterarPassword(string newPassword)
+        {
+            Password = newPassword;
+        }
     }
 }

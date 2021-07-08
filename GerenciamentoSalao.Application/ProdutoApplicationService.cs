@@ -28,7 +28,7 @@ namespace GerenciamentoSalao.Application
         {
             var produtos = _service.GetAll();
 
-            return _mapper.MapperListProdutosDTO(produtos);
+            return _mapper.MapperListDTO(produtos);
         }
 
         public ProdutoDTO GetById(Guid id)
