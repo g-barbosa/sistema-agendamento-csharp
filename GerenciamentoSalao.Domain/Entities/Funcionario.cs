@@ -28,7 +28,6 @@ namespace GerenciamentoSalao.Domain.Entities
             Nome = funcionario.Nome;
             Telefone = funcionario.Telefone;
             Login = funcionario.Login;
-            Password = funcionario.Password;
             Entrada = funcionario.Entrada;
             Saida = funcionario.Saida;
         }

@@ -62,14 +62,12 @@ namespace GerenciamentoSalao.API.Controllers
             }
         }
 
-        [HttpDelete]
-        public ActionResult Delete([FromBody] AgendaDTO agendaDto)
+        [HttpDelete("{id}")]
+        public ActionResult Delete(Guid id)
         {
             try
             {
-                if (agendaDto == null)
-                    return NotFound();
-                _service.Remove(agendaDto);
+                _service.Remove(id);
                 return Ok("Agenda removido com sucesso!");
             }
             catch (Exception ex)

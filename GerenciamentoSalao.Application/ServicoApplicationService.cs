@@ -34,18 +34,21 @@ namespace GerenciamentoSalao.Application
         public ServicoDTO GetById(Guid id)
         {
             var model = _service.GetById(id);
+            if (model == null) throw new Exception("Não foi possível encontrar este serviço");
+
             return _mapper.MapperEntityToDTO(model);
         }
 
-        public void Remove(ServicoDTO DTO)
+        public void Remove(Guid id)
         {
-            var model = _mapper.MapperDTOToEntity(DTO);
-            _service.Remove(model);
+            _service.Remove(id);
         }
 
         public void Update(ServicoDTO DTO)
         {
-            var model = _mapper.MapperDTOToEntity(DTO);
+            var model = _service.GetById(DTO.Id);
+            model.AlterarPreco(DTO.Preco);
+            model.AlterarDescricao(DTO.Descricao);
             _service.Update(model);
         }
     }

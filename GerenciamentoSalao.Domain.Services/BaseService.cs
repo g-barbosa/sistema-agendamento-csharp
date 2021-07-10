@@ -30,8 +30,9 @@ namespace GerenciamentoSalao.Domain.Services
             return _repository.GetById(id);
         }
 
-        public void Remove(TEntity obj)
+        public void Remove(Guid id)
         {
+            var obj = _repository.GetById(id);
             _repository.Remove(obj);
         }
 

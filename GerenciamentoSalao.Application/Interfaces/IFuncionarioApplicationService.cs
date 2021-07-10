@@ -8,7 +8,7 @@ namespace GerenciamentoSalao.Application.Interfaces
     {
         void Add(FuncionarioDTO funcionarioDTO);
         void Update(FuncionarioDTO funcionarioDTO);
-        void Remove(FuncionarioDTO funcionarioDTO);
+        void Remove(Guid id);
         IEnumerable<FuncionarioDTO> GetAll();
         FuncionarioDTO GetById(Guid id);
     }

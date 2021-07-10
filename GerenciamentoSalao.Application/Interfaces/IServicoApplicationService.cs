@@ -8,7 +8,7 @@ namespace GerenciamentoSalao.Application.Interfaces
     {
         void Add(ServicoDTO servicoDTO);
         void Update(ServicoDTO servicoDTO);
-        void Remove(ServicoDTO servicoDTO);
+        void Remove(Guid id);
         IEnumerable<ServicoDTO> GetAll();
         ServicoDTO GetById(Guid id);
     }

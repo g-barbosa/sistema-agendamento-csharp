@@ -41,5 +41,15 @@ namespace GerenciamentoSalao.Domain.Entities
         {
             return Quantidade >= quantidade;
         }
+
+        public void AlterarPreco(decimal novoPreco)
+        {
+            Preco = novoPreco;
+        }
+
+        public void AlterarEstoque(int quantidade)
+        {
+            Quantidade = quantidade;
+        }
     }
 }

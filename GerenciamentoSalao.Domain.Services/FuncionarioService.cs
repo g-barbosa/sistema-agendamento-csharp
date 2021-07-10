@@ -15,7 +15,7 @@ namespace GerenciamentoSalao.Domain.Services
             _cryptography = cryptography;
         }
 
-        public void Add(Funcionario funcionario)
+        public new void Add(Funcionario funcionario)
         {
             funcionario.AlterarPassword(_cryptography.Encrypt(funcionario.Password));
             _repository.Add(funcionario);

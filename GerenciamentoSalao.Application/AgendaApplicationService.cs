@@ -34,18 +34,21 @@ namespace GerenciamentoSalao.Application
         public AgendaDTO GetById(Guid id)
         {
             var model = _service.GetById(id);
+            if (model == null) throw new Exception("Não foi possível encontrar esta agenda");
+
             return _mapper.MapperEntityToDTO(model);
         }
 
-        public void Remove(AgendaDTO DTO)
+        public void Remove(Guid id)
         {
-            var model = _mapper.MapperDTOToEntity(DTO);
-            _service.Remove(model);
+            _service.Remove(id);
         }
 
         public void Update(AgendaDTO DTO)
         {
-            var model = _mapper.MapperDTOToEntity(DTO);
+            var model = _service.GetById(DTO.Id);
+            model.AlterarFuncionario(DTO.Funcionario);
+            model.AlterarData(DTO.Data);
             _service.Update(model);
         }
     }

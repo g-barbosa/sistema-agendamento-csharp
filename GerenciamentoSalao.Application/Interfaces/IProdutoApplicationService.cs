@@ -8,7 +8,7 @@ namespace GerenciamentoSalao.Application.Interfaces
     {
         void Add(ProdutoDTO produtoDTO);
         void Update(ProdutoDTO produtoDTO);
-        void Remove(ProdutoDTO produtoDTO);
+        void Remove(Guid id);
         IEnumerable<ProdutoDTO> GetAll();
         ProdutoDTO GetById(Guid id);
     }

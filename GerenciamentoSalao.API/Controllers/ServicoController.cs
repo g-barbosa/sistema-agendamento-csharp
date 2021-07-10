@@ -62,14 +62,12 @@ namespace GerenciamentoSalao.API.Controllers
             }
         }
 
-        [HttpDelete]
-        public ActionResult Delete([FromBody] ServicoDTO ServicoDTO)
+        [HttpDelete("{id}")]
+        public ActionResult Delete(Guid id)
         {
             try
             {
-                if (ServicoDTO == null)
-                    return NotFound();
-                _service.Remove(ServicoDTO);
+                _service.Remove(id);
                 return Ok("Serviço removido com sucesso!");
             }
             catch (Exception ex)

@@ -9,7 +9,7 @@ namespace GerenciamentoSalao.Application.Interfaces
     {
         void Add(AgendaDTO agendaDTO);
         void Update(AgendaDTO agendaDTO);
-        void Remove(AgendaDTO agendaDTO);
+        void Remove(Guid id);
         IEnumerable<AgendaDTO> GetAll();
         AgendaDTO GetById(Guid id);
     }
