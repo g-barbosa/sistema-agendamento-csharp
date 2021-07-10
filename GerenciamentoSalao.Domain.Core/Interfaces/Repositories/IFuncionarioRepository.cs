@@ -2,7 +2,7 @@
 
 namespace GerenciamentoSalao.Domain.Core.Interfaces.Repositories
 {
-    public interface IFuncionarioRepository : IBaseRepository<Funcionario>
+    public interface IFuncionarioRepository : IBaseRepository<Funcionario>, IAccountRepository<Funcionario>
     {
     }
 }

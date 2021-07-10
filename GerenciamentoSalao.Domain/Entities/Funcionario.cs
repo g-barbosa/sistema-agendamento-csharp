@@ -2,7 +2,7 @@
 
 namespace GerenciamentoSalao.Domain.Entities
 {
-    public class Funcionario : Entity
+    public class Funcionario : Entity, IUser
     {
         public string Nome { get; private set; }
         public string Telefone { get; private set; }

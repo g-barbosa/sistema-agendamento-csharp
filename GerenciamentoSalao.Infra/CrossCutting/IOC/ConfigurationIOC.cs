@@ -30,6 +30,8 @@ namespace GerenciamentoSalao.Infra.CrossCutting.IOC
             builder.RegisterType<ServicoService>().As<IServicoService>();
             builder.RegisterType<AgendaService>().As<IAgendaService>();
             builder.RegisterType<AgendamentoService>().As<IAgendamentoService>();
+            builder.RegisterType<AccountClienteService>().As<IAccountClienteService>();
+            builder.RegisterType<AccountFuncionarioService>().As<IAccountFuncionarioService>();
 
             builder.RegisterType<ClienteRepository>().As<IClienteRepository>();
             builder.RegisterType<FuncionarioRepository>().As<IFuncionarioRepository>();

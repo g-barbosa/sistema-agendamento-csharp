@@ -11,5 +11,10 @@ namespace GerenciamentoSalao.Infra.Data.Repositories
         {
             _sqlContext = sqlContext;
         }
+
+        public Cliente GetByLogin(string login)
+        {
+            return _sqlContext.Set<Cliente>().Find(login);
+        }
     }
 }

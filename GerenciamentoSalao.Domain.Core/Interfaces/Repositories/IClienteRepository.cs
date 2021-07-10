@@ -2,7 +2,7 @@
 
 namespace GerenciamentoSalao.Domain.Core.Interfaces.Repositories
 {
-    public interface IClienteRepository : IBaseRepository<Cliente>
+    public interface IClienteRepository : IBaseRepository<Cliente>, IAccountRepository<Cliente>
     {
     }
 }
