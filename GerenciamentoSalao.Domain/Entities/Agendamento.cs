@@ -21,16 +21,14 @@ namespace GerenciamentoSalao.Domain.Entities
             AgendaId = agendaId;
         }
 
-        public void AlterarProduto(Produto produto)
+        public void AlterarProduto(Guid produtoId)
         {
-            ProdutoId = produto.Id;
-            Produto = produto;
+            ProdutoId = produtoId;
         }
 
-        public void AlterarServico(Servico servico)
+        public void AlterarServico(Guid servicoId)
         {
-            ServicoId = servico.Id;
-            Servico = servico;
+            ServicoId = servicoId;
         }
     }
 }

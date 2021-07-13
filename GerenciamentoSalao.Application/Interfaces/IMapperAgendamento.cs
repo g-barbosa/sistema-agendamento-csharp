@@ -7,7 +7,7 @@ namespace GerenciamentoSalao.Infra.CrossCutting.Interfaces
     public interface IMapperAgendamento
     {
         Agendamento MapperDTOToEntity(AgendamentoDTO DTO);
-        IEnumerable<AgendamentoDTO> MapperListDTO(IEnumerable<Agendamento> entities);
-        AgendamentoDTO MapperEntityToDTO(Agendamento entity);
+        IEnumerable<AgendamentoDTOResponse> MapperListDTO(IEnumerable<Agendamento> entities);
+        AgendamentoDTOResponse MapperEntityToDTO(Agendamento entity);
     }
 }

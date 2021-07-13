@@ -25,10 +25,9 @@ namespace GerenciamentoSalao.Domain.Entities
             Data = data;
         }
 
-        public void AlterarFuncionario(Funcionario funcionario)
+        public void AlterarFuncionario(Guid funcionarioId)
         {
-            FuncionarioId = funcionario.Id;
-            Funcionario = funcionario;
+            FuncionarioId = funcionarioId;
         }
     }
 }

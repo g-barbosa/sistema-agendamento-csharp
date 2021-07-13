@@ -28,12 +28,12 @@ namespace GerenciamentoSalao.Infra.Data.Repositories
             }
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return _sqlContext.Set<TEntity>().ToList();
         }
 
-        public TEntity GetById(Guid id)
+        public virtual TEntity GetById(Guid id)
         {
             return _sqlContext.Set<TEntity>().Find(id);
         }

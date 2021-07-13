@@ -12,9 +12,15 @@ namespace GerenciamentoSalao.Application.DTOS
         public Guid ProdutoId { get; set; }
         public Guid ServicoId { get; set; }
         public Guid AgendaId { get; set; }
+    }
 
-        public Produto Produto { get; private set; }
-        public Servico Servico { get; private set; }
-        public Agenda Agenda { get; private set; }
+    public class AgendamentoDTOResponse
+    {
+        public Guid Id { get; set; }
+        public Produto Produto { get; set; }
+        public Servico Servico { get; set; }
+        public DateTime Data { get; set; }
+        public Cliente Cliente { get; set; }
+        public Funcionario Funcionario { get; set; }
     }
 }

@@ -24,14 +24,14 @@ namespace GerenciamentoSalao.Application
             _service.Add(model);
         }
 
-        public IEnumerable<AgendamentoDTO> GetAll()
+        public IEnumerable<AgendamentoDTOResponse> GetAll()
         {
             var models = _service.GetAll();
 
             return _mapper.MapperListDTO(models);
         }
 
-        public AgendamentoDTO GetById(Guid id)
+        public AgendamentoDTOResponse GetById(Guid id)
         {
             var model = _service.GetById(id);
             if (model == null) throw new Exception("Não foi possível encontrar este agendamento");
@@ -47,8 +47,8 @@ namespace GerenciamentoSalao.Application
         public void Update(AgendamentoDTO DTO)
         {
             var model = _service.GetById(DTO.Id);
-            model.AlterarProduto(DTO.Produto);
-            model.AlterarServico(DTO.Servico);
+            model.AlterarProduto(DTO.ProdutoId);
+            model.AlterarServico(DTO.ServicoId);
             _service.Update(model);
         }
     }

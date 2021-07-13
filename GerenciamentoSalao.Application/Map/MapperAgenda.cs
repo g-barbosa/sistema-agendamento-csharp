@@ -25,6 +25,7 @@ namespace GerenciamentoSalao.Infra.CrossCutting.Map
                 Id = model.Id,
                 FuncionarioId = model.FuncionarioId,
                 ClienteId = model.ClienteId,
+                Data = model.Data,
             };
 
             return DTO;

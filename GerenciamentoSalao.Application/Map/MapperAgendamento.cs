@@ -18,20 +18,22 @@ namespace GerenciamentoSalao.Infra.CrossCutting.Map
             return model;
         }
 
-        public AgendamentoDTO MapperEntityToDTO(Agendamento model)
+        public AgendamentoDTOResponse MapperEntityToDTO(Agendamento model)
         {
-            var DTO = new AgendamentoDTO()
+            var DTO = new AgendamentoDTOResponse()
             {
                 Id = model.Id,
-                ProdutoId = model.ProdutoId,
-                ServicoId = model.ServicoId,
-                AgendaId = model.AgendaId
+                Produto = model.Produto,
+                Servico = model.Servico,
+                Data = model.Agenda.Data,
+                Cliente = model.Agenda.Cliente,
+                Funcionario = model.Agenda.Funcionario
             };
 
             return DTO;
         }
 
-        public IEnumerable<AgendamentoDTO> MapperListDTO(IEnumerable<Agendamento> models)
+        public IEnumerable<AgendamentoDTOResponse> MapperListDTO(IEnumerable<Agendamento> models)
         {
             var dto = models.Select(model => MapperEntityToDTO(model));
             return dto;
