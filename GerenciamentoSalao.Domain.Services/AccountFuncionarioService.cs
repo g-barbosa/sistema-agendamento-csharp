@@ -17,15 +17,20 @@ namespace GerenciamentoSalao.Domain.Services
             _cryptography = cryptography;
         }
 
-        public override Funcionario Login(string login, string password)
+        public override dynamic Login(string login, string password)
         {
             var user = _repository.GetByLogin(login);
+
+            if (user == null) throw new Exception("Usuário ou senha incorretas");
 
             var validado = _cryptography.Verify(user.Password, password);
 
             if (!validado) throw new Exception("Usuário ou senha incorretas");
 
-            return user;
+            var token = TokenService.GenerateToken(user);
+            user.AlterarPassword("");
+
+            return new { user = user, token = token };
         }
     }
 }

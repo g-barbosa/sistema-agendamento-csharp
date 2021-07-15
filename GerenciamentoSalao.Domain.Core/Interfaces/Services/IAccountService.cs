@@ -7,6 +7,6 @@ namespace GerenciamentoSalao.Domain.Core.Interfaces.Services
 {
     public interface IAccountService<TEntity> where TEntity : class
     {
-        TEntity Login(string login, string password);
+        dynamic Login(string login, string password);
     }
 }

@@ -2,13 +2,8 @@
 
 namespace GerenciamentoSalao.Domain.Entities
 {
-    public class Cliente : Entity, IUser
+    public class Cliente : User
     {
-        public string Nome { get; private set; }
-        public string Telefone { get; private set; }
-        public string Login { get; private set; }
-        public string Password { get; private set; }
-
         protected Cliente() { }
 
         public Cliente(string nome, string telefone, string login, string password)
@@ -17,6 +12,7 @@ namespace GerenciamentoSalao.Domain.Entities
             Telefone = telefone;
             Login = login;
             Password = password;
+            Role = "Cliente";
         }
 
         public void AlterarCliente(Cliente cliente)
@@ -24,11 +20,6 @@ namespace GerenciamentoSalao.Domain.Entities
             Nome = cliente.Nome;
             Telefone = cliente.Telefone;
             Login = cliente.Login;
-        }
-
-        public void AlterarPassword(string newPassword)
-        {
-            Password = newPassword;
         }
     }
 }

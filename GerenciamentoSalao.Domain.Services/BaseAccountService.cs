@@ -15,6 +15,6 @@ namespace GerenciamentoSalao.Domain.Services
         {
             _repository = repository;
         }
-        public abstract TEntity Login(string login, string password);
+        public abstract dynamic Login(string login, string password);
     }
 }
