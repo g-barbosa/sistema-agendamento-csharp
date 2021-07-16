@@ -1,5 +1,6 @@
 ﻿using GerenciamentoSalao.Domain.Core.Interfaces.Repositories;
 using GerenciamentoSalao.Domain.Entities;
+using System.Linq;
 
 namespace GerenciamentoSalao.Infra.Data.Repositories
 {
@@ -14,7 +15,7 @@ namespace GerenciamentoSalao.Infra.Data.Repositories
 
         public Funcionario GetByLogin(string login)
         {
-            return _sqlContext.Set<Funcionario>().Find(login);
+            return _sqlContext.Set<Funcionario>().Where(f => f.Login == login).FirstOrDefault();
         }
     }
 

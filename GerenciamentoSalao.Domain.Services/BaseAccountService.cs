@@ -1,6 +1,8 @@
-﻿using GerenciamentoSalao.Domain.Core.DomainObjects;
+﻿using GerenciamentoSalao.Application.DTOS;
+using GerenciamentoSalao.Domain.Core.DomainObjects;
 using GerenciamentoSalao.Domain.Core.Interfaces.Repositories;
 using GerenciamentoSalao.Domain.Core.Interfaces.Services;
+using GerenciamentoSalao.Domain.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +17,6 @@ namespace GerenciamentoSalao.Domain.Services
         {
             _repository = repository;
         }
-        public abstract dynamic Login(string login, string password);
+        public abstract dynamic Login(LoginDTO DTO);
     }
 }

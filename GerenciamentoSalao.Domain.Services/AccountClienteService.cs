@@ -1,6 +1,7 @@
 ﻿using GerenciamentoSalao.Domain.Core.Interfaces;
 using GerenciamentoSalao.Domain.Core.Interfaces.Repositories;
 using GerenciamentoSalao.Domain.Core.Interfaces.Services;
+using GerenciamentoSalao.Domain.DTO;
 using GerenciamentoSalao.Domain.Entities;
 using System;
 
@@ -17,13 +18,13 @@ namespace GerenciamentoSalao.Domain.Services
             _cryptography = cryptography;
         }
 
-        public override dynamic Login(string login, string password)
+        public override dynamic Login(LoginDTO DTO)
         {
-            var user = _repository.GetByLogin(login);
+            var user = _repository.GetByLogin(DTO.login);
 
             if (user == null) throw new Exception("Usuário ou senha incorretas");
 
-            var validado = _cryptography.Verify(user.Password, password);
+            var validado = _cryptography.Verify(user.Password, DTO.password);
 
             if (!validado) throw new Exception("Usuário ou senha incorretas");
 

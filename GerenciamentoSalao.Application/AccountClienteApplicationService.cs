@@ -1,19 +1,19 @@
 ﻿using GerenciamentoSalao.Application.Interfaces;
 using GerenciamentoSalao.Domain.Core.Interfaces.Services;
-using GerenciamentoSalao.Domain.Entities;
+using GerenciamentoSalao.Domain.DTO;
 
 namespace GerenciamentoSalao.Application
 {
-    class AccountClienteApplicationService : IAccountApplicationService
+    public class AccountClienteApplicationService : IAccountClienteApplicationService
     {
         private readonly IAccountClienteService _service;
         public AccountClienteApplicationService(IAccountClienteService service)
         {
             _service = service;
         }
-        public dynamic Login(string login, string password)
+        public dynamic Login(LoginDTO DTO)
         {
-            return _service.Login(login, password);
+            return _service.Login(DTO);
         }
     }
 }

@@ -1,12 +1,10 @@
-﻿using GerenciamentoSalao.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using GerenciamentoSalao.Application.DTOS;
+using GerenciamentoSalao.Domain.DTO;
 
 namespace GerenciamentoSalao.Application.Interfaces
 {
     public interface IAccountApplicationService
     {
-        dynamic Login(string login, string password);
+        dynamic Login(LoginDTO DTO);
     }
 }

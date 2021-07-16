@@ -1,5 +1,6 @@
 ﻿using GerenciamentoSalao.Application.DTOS;
 using GerenciamentoSalao.Application.Interfaces;
+using GerenciamentoSalao.Domain.DTO;
 using GerenciamentoSalao.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,9 +12,9 @@ namespace GerenciamentoSalao.API.Controllers
     [ApiController]
     public class AccountController : Controller
     {
-        private readonly IAccountApplicationService _clienteService;
-        private readonly IAccountApplicationService _funcionarioService;
-        public AccountController(IAccountApplicationService clienteService, IAccountApplicationService funcionarioService)
+        private readonly IAccountClienteApplicationService _clienteService;
+        private readonly IAccountFuncionarioApplicationService _funcionarioService;
+        public AccountController(IAccountClienteApplicationService clienteService, IAccountFuncionarioApplicationService funcionarioService)
         {
             _clienteService = clienteService;
             _funcionarioService = funcionarioService;
@@ -21,16 +22,16 @@ namespace GerenciamentoSalao.API.Controllers
 
         [HttpPost]
         [Route("cliente-login")]
-        public ActionResult ClienteLogin([FromBody] string login, string password)
+        public ActionResult ClienteLogin([FromBody] LoginDTO DTO)
         {
-            return _clienteService.Login(login, password);
+            return Ok(_clienteService.Login(DTO));
         }
 
         [HttpPost]
         [Route("funcionario-login")]
-        public ActionResult FuncionarioLogin([FromBody] string login, string password)
+        public ActionResult FuncionarioLogin([FromBody] LoginDTO DTO)
         {
-            return _funcionarioService.Login(login, password);
+            return Ok(_funcionarioService.Login(DTO));
         }
     }
 }

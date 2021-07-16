@@ -1,5 +1,6 @@
 ﻿using GerenciamentoSalao.Application.DTOS;
 using GerenciamentoSalao.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,18 +19,21 @@ namespace GerenciamentoSalao.API.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult<IEnumerable<string>> Get()
         {
             return Ok(_service.GetAll());
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Funcionario")]
         public ActionResult<IEnumerable<string>> Get(Guid id)
         {
             return Ok(_service.GetById(id));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Funcionario")]
         public ActionResult Post([FromBody] ServicoDTO ServicoDTO)
         {
             try
@@ -47,6 +51,7 @@ namespace GerenciamentoSalao.API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Funcionario")]
         public ActionResult Put([FromBody] ServicoDTO ServicoDTO)
         {
             try
@@ -63,6 +68,7 @@ namespace GerenciamentoSalao.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Funcionario")]
         public ActionResult Delete(Guid id)
         {
             try

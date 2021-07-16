@@ -1,5 +1,6 @@
 ﻿using GerenciamentoSalao.Application.DTOS;
 using GerenciamentoSalao.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 namespace GerenciamentoSalao.API.Controllers
 {
     [Route("Agenda")]
+    [Authorize]
     [ApiController]
     public class AgendaController : Controller
     {
