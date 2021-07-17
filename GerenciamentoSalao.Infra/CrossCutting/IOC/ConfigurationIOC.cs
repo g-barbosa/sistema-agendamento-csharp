@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using GerenciamentoSalao.Application;
+using GerenciamentoSalao.Application.DTOS;
 using GerenciamentoSalao.Application.Interfaces;
 using GerenciamentoSalao.Domain.Core.DomainObjects;
 using GerenciamentoSalao.Domain.Core.Interfaces;
@@ -25,6 +26,7 @@ namespace GerenciamentoSalao.Infra.CrossCutting.IOC
             builder.RegisterType<AgendamentoApplicationService>().As<IAgendamentoApplicationService>();
             builder.RegisterType<AccountClienteApplicationService>().As<IAccountClienteApplicationService>();
             builder.RegisterType<AccountFuncionarioApplicationService>().As<IAccountFuncionarioApplicationService>();
+            builder.RegisterType<FinancasApplicationService>().As<IFinancasApplicationService>();
 
             builder.RegisterType<ClienteService>().As<IClienteService>();
             builder.RegisterType<FuncionarioService>().As<IFuncionarioService>();
@@ -34,6 +36,7 @@ namespace GerenciamentoSalao.Infra.CrossCutting.IOC
             builder.RegisterType<AgendamentoService>().As<IAgendamentoService>();
             builder.RegisterType<AccountClienteService>().As<IAccountClienteService>();
             builder.RegisterType<AccountFuncionarioService>().As<IAccountFuncionarioService>();
+            builder.RegisterType<FinancasService>().As<IFinancasService<FinancasDTO>>();
 
             builder.RegisterType<ClienteRepository>().As<IClienteRepository>();
             builder.RegisterType<FuncionarioRepository>().As<IFuncionarioRepository>();
