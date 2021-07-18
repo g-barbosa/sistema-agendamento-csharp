@@ -8,6 +8,7 @@ using System.Collections.Generic;
 namespace GerenciamentoSalao.API.Controllers
 {
     [Route("Produto")]
+    [Authorize(Roles = "Funcionario")]
     [ApiController]
     public class ProdutoController : Controller
     {
@@ -19,21 +20,18 @@ namespace GerenciamentoSalao.API.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Funcionario")]
         public ActionResult<IEnumerable<string>> Get()
         {
             return Ok(_service.GetAll());
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "Funcionario")]
         public ActionResult<IEnumerable<string>> Get(Guid id)
         {
             return Ok(_service.GetById(id));
         }
 
         [HttpPost]
-        [Authorize(Roles = "Funcionario")]
         public ActionResult Post([FromBody] ProdutoDTO ProdutoDTO)
         {
             try
@@ -51,7 +49,6 @@ namespace GerenciamentoSalao.API.Controllers
         }
 
         [HttpPut]
-        [Authorize(Roles = "Funcionario")]
         public ActionResult Put([FromBody] ProdutoDTO ProdutoDTO)
         {
             try
@@ -68,7 +65,6 @@ namespace GerenciamentoSalao.API.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Funcionario")]
         public ActionResult Delete(Guid id)
         {
             try

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 namespace GerenciamentoSalao.API.Controllers
 {
     [Route("Cliente")]
-    [Authorize(Roles = "Cliente")]
+    [Authorize(Roles = "Funcionario")]
     [ApiController]
     public class ClienteController : Controller
     {
