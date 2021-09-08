@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace GerenciamentoSalao.Domain.Services
 {
@@ -22,21 +23,26 @@ namespace GerenciamentoSalao.Domain.Services
             _produtoRepository = produtoRepository;
             _agendamentoRepository = agendamentoRepository;
         }
-        public FinancasDTO Get()
+        public async Task<FinancasDTO> Get()
         {
             var agendamentos = _agendamentoRepository.GetAll();
 
             decimal lucro = 0;
             decimal despesa = 0;
 
-            foreach (var agendamento in agendamentos)
+            var somasTasks = agendamentos.Select(agendamento => Task.Factory.StartNew(() =>
             {
                 var servico = _servicoRepository.GetById(agendamento.ServicoId);
                 var produto = _produtoRepository.GetById(agendamento.ProdutoId);
 
-                lucro += servico.Preco;
-                despesa += produto.Preco;
-            }
+                (decimal lucro, decimal despesa) resultado = (servico.Preco, produto.Preco);
+                return resultado;
+            }));
+
+            var resultados = await Task.WhenAll(somasTasks);
+
+            lucro = resultados.Sum(l => l.lucro);
+            despesa = resultados.Sum(d => d.despesa);
 
             return new FinancasDTO()
             {

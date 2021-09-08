@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\EventSourcing\EventSourcing.csproj" />
     <ProjectReference Include="..\GerenciamentoSalao.Application\GerenciamentoSalao.Application.csproj" />
     <ProjectReference Include="..\GerenciamentoSalao.Domain.Core\GerenciamentoSalao.Domain.Core.csproj" />
     <ProjectReference Include="..\GerenciamentoSalao.Domain.Services\GerenciamentoSalao.Domain.Services.csproj" />

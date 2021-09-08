@@ -43,7 +43,7 @@ namespace GerenciamentoSalao.Infra.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = Environment.GetEnvironmentVariable("connectionString");
+            var connectionString = "Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=GerenciamentoSalao;Data Source=GIO";//Environment.GetEnvironmentVariable("connectionString");
             optionsBuilder.UseSqlServer(connectionString);
         }
     }

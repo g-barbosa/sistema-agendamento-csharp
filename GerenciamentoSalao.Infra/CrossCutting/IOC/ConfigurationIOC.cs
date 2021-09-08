@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using EventSourcing;
 using GerenciamentoSalao.Application;
 using GerenciamentoSalao.Application.DTOS;
 using GerenciamentoSalao.Application.Interfaces;
@@ -53,6 +54,8 @@ namespace GerenciamentoSalao.Infra.CrossCutting.IOC
             builder.RegisterType<MapperAgendamento>().As<IMapperAgendamento>();
 
             builder.RegisterType<Cryptography>().As<ICryptography>();
+
+            builder.RegisterType<EventStoreService>().As<IEventStoreService>();
             #endregion
         }
     }

@@ -2,6 +2,7 @@
 using GerenciamentoSalao.Application.Interfaces;
 using GerenciamentoSalao.Domain.Core.Interfaces.Services;
 using System;
+using System.Threading.Tasks;
 
 namespace GerenciamentoSalao.Application
 {
@@ -12,9 +13,9 @@ namespace GerenciamentoSalao.Application
         {
             _financasServices = financasServices;
         }
-        public FinancasDTO Get()
+        public async Task<FinancasDTO> Get()
         {
-            return _financasServices.Get();
+            return await _financasServices.Get();
         }
     }
 }

@@ -11,17 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{253A6F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{B092553F-F260-4AF9-BD6F-B616135C199B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoSalao.API", "GerenciamentoSalao.API\GerenciamentoSalao.API.csproj", "{0311AD06-5D80-4485-B944-70D734A6CA94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoSalao.API", "GerenciamentoSalao.API\GerenciamentoSalao.API.csproj", "{0311AD06-5D80-4485-B944-70D734A6CA94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoSalao.Application", "GerenciamentoSalao.Application\GerenciamentoSalao.Application.csproj", "{2F838D75-F423-4EAC-BC06-0FE357325ECE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoSalao.Application", "GerenciamentoSalao.Application\GerenciamentoSalao.Application.csproj", "{2F838D75-F423-4EAC-BC06-0FE357325ECE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoSalao.Domain", "GerenciamentoSalao.Domain\GerenciamentoSalao.Domain.csproj", "{429ACBFB-1FF4-4687-904D-EEAC7119E0E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoSalao.Domain", "GerenciamentoSalao.Domain\GerenciamentoSalao.Domain.csproj", "{429ACBFB-1FF4-4687-904D-EEAC7119E0E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoSalao.Domain.Core", "GerenciamentoSalao.Domain.Core\GerenciamentoSalao.Domain.Core.csproj", "{8CA6A955-B406-4215-98E7-6337E3CE27D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoSalao.Domain.Core", "GerenciamentoSalao.Domain.Core\GerenciamentoSalao.Domain.Core.csproj", "{8CA6A955-B406-4215-98E7-6337E3CE27D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoSalao.Domain.Services", "GerenciamentoSalao.Domain.Services\GerenciamentoSalao.Domain.Services.csproj", "{1B7EFC70-C6C7-4617-B282-6C4A094EC183}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoSalao.Domain.Services", "GerenciamentoSalao.Domain.Services\GerenciamentoSalao.Domain.Services.csproj", "{1B7EFC70-C6C7-4617-B282-6C4A094EC183}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciamentoSalao.Infra", "GerenciamentoSalao.Infra\GerenciamentoSalao.Infra.csproj", "{EE7AD8E3-39DA-4566-840D-0C6E97E83F95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciamentoSalao.Infra", "GerenciamentoSalao.Infra\GerenciamentoSalao.Infra.csproj", "{EE7AD8E3-39DA-4566-840D-0C6E97E83F95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing", "EventSourcing\EventSourcing.csproj", "{542736A6-62E5-45DF-ACDF-BA497E5F6995}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{EE7AD8E3-39DA-4566-840D-0C6E97E83F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE7AD8E3-39DA-4566-840D-0C6E97E83F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE7AD8E3-39DA-4566-840D-0C6E97E83F95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{542736A6-62E5-45DF-ACDF-BA497E5F6995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{542736A6-62E5-45DF-ACDF-BA497E5F6995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{542736A6-62E5-45DF-ACDF-BA497E5F6995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{542736A6-62E5-45DF-ACDF-BA497E5F6995}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

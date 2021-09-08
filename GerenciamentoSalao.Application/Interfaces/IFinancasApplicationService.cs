@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace GerenciamentoSalao.Application.Interfaces
 {
     public interface IFinancasApplicationService
     {
-        FinancasDTO Get();
+        Task<FinancasDTO> Get();
     }
 }

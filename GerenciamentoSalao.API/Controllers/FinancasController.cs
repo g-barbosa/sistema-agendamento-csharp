@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GerenciamentoSalao.API.Controllers
 {
@@ -20,9 +21,9 @@ namespace GerenciamentoSalao.API.Controllers
         }
 
         [HttpGet]
-        public ActionResult Get()
+        public async Task<ActionResult> Get()
         {
-            return Ok(_service.Get());
+            return Ok(await _service.Get());
         }
     }
 }
