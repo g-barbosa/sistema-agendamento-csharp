@@ -1,48 +1,37 @@
 ﻿using GerenciamentoSalao.Application.DTOS;
 using GerenciamentoSalao.Domain.Core.Interfaces.Repositories;
 using GerenciamentoSalao.Domain.Core.Interfaces.Services;
+using GerenciamentoSalao.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace GerenciamentoSalao.Domain.Services
 {
     public class FinancasService : IFinancasService<FinancasDTO>
     {
-        private readonly IServicoRepository _servicoRepository;
-        private readonly IProdutoRepository _produtoRepository;
         private readonly IAgendamentoRepository _agendamentoRepository;
         public FinancasService(
-            IServicoRepository servicoRepository, 
-            IProdutoRepository produtoRepository, 
             IAgendamentoRepository agendamentoRepository)
         {
-            _servicoRepository = servicoRepository;
-            _produtoRepository = produtoRepository;
             _agendamentoRepository = agendamentoRepository;
         }
         public async Task<FinancasDTO> Get()
         {
-            var agendamentos = _agendamentoRepository.GetAll();
+            var agendamentos = _agendamentoRepository.GetAll().AsParallel().WithDegreeOfParallelism(4);
 
             decimal lucro = 0;
             decimal despesa = 0;
 
-            var somasTasks = agendamentos.Select(agendamento => Task.Factory.StartNew(() =>
+
+            foreach(var agendamento in agendamentos)
             {
-                var servico = _servicoRepository.GetById(agendamento.ServicoId);
-                var produto = _produtoRepository.GetById(agendamento.ProdutoId);
-
-                (decimal lucro, decimal despesa) resultado = (servico.Preco, produto.Preco);
-                return resultado;
-            }));
-
-            var resultados = await Task.WhenAll(somasTasks);
-
-            lucro = resultados.Sum(l => l.lucro);
-            despesa = resultados.Sum(d => d.despesa);
+                lucro += agendamento.Servico.Preco;
+                despesa += agendamento.Produto.Preco;
+            }
 
             return new FinancasDTO()
             {
