@@ -30,7 +30,7 @@ namespace GerenciamentoSalao.Infra.Data.Repositories
 
         public virtual IEnumerable<TEntity> GetAll()
         {
-            return _sqlContext.Set<TEntity>().ToList();
+            return _sqlContext.Set<TEntity>().AsNoTracking().ToList();
         }
 
         public virtual TEntity GetById(Guid id)
