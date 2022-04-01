@@ -8,9 +8,9 @@ namespace GerenciamentoSalao.Domain.Entities
         public Guid ServicoId { get; private set; }
         public Guid AgendaId { get; private set; }
 
-        public Produto Produto { get; private set; }
-        public Servico Servico { get; private set; }
-        public Agenda Agenda { get; private set; }
+        public Produto Produto { get; set; }
+        public Servico Servico { get; set; }
+        public Agenda Agenda { get; set; }
 
         protected Agendamento() { }
 
