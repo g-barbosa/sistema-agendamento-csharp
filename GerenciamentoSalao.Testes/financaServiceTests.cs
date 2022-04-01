@@ -47,12 +47,6 @@ namespace GerenciamentoSalao.Testes
 
             //Act
             FinancasDTO financas = await financasService.Get();
-            var expected = new FinancasDTO()
-            {
-                Despesa = 65,
-                Lucro = 150,
-                Total = 85
-            };
 
             //Assert
             Assert.NotNull(financas);
